@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# ArcGIS stuff
+*.esriaddin
+#TODO: add BACKUP_FILE_PATTERN, see makeaddin.py
+
 # C extensions
 *.so
 
