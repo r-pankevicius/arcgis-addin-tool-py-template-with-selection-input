@@ -112,7 +112,9 @@ class ButtonClickMe(object):
             self.doTheAction()
 
     def changeEnabled(self):
-        self.enabled = Helpers.CanEnableMe(False)
+        # It seems that we don't have a chance to react to selection change events
+        # while not ine edit mode :(
+        self.enabled = Helpers.CanEnableMe(True)
 
     def doTheAction(self):
         selected = Helpers.GetSelectedFeatures()
