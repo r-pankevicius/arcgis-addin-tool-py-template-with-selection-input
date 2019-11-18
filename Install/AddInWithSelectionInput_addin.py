@@ -106,6 +106,7 @@ class ButtonClickMe(object):
         self.changeEnabled()
 
     def onClick(self):
+        # Red Zone: This may crash ArcMap, see references in README.md
         self.pathToFile = ButtonClickMe.PickFileToAttach()
         if os.path.isfile(self.pathToFile):
             self.doTheAction()
@@ -136,7 +137,11 @@ class ButtonClickMe(object):
 
 # ======================================================================
 class ExtensionAttachments(object):
-    """Implementation for extension"""
+    """
+    Implementation for extension
+    
+    https://desktop.arcgis.com/en/arcmap/latest/analyze/python-addins/extension-class.htm
+    """
     def __init__(self):
         # For performance considerations, please remove all unused methods in this class.
         self.enabled = True
@@ -188,6 +193,7 @@ class ExtensionAttachments(object):
         print('extension.itemReordered')
         pass
     def onEditorSelectionChanged(self):
+        print('extension.onEditorSelectionChanged')
         self.setButtonsState()
         pass
     def onCurrentLayerChanged(self):
@@ -197,12 +203,12 @@ class ExtensionAttachments(object):
         print('extension.onCurrentTaskChanged')
         pass
     def onStartEditing(self):
-        #print('extension.onStartEditing')
+        print('extension.onStartEditing')
         self.inEditMode = True
         self.setButtonsState()
         pass
     def onStopEditing(self, save_changes):
-        #print('extension.onStopEditing')
+        print('extension.onStopEditing')
         self.inEditMode = False
         self.setButtonsState()
         pass
