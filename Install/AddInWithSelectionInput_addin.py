@@ -6,19 +6,19 @@ import collections
 import Tkinter as tkinter
 import tkFileDialog
 
-# ======================================================================
-# Instances in this module.
-# It allows coordination between extension and buttons, but more important
-# (what esri did not tell you yet):
-# you get an interactive Python window to inspect addin behaviour.
-# In ArcMap select Geoprocessing | Python to open Python window, then:
-# >>> import AddInWithSelectionInput_addin as ext
-# >>> ext.extension
-# <AddInWithSelectionInput_addin.ExtensionAttachments object at 0x1197BCB0>
-# >>> ext.button
-# <AddInWithSelectionInput_addin.ButtonClickMe object at 0x1197BDD0>
-# >>>
-# If you have used IDLE, you know what it means.
+"""
+Instances in this module.
+It allows coordination between extension and buttons, but more important
+you get an interactive Python window to inspect addin behaviour.
+In ArcMap select Geoprocessing | Python to open Python window, then:
+>>> import AddInWithSelectionInput_addin as ext
+>>> ext.extension
+<AddInWithSelectionInput_addin.ExtensionAttachments object at 0x1197BCB0>
+>>> ext.button
+<AddInWithSelectionInput_addin.ButtonClickMe object at 0x1197BDD0>
+>>>
+If you have used IDLE, you know what it means.
+"""
 
 button = None
 extension = None
